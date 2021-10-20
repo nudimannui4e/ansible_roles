@@ -1,0 +1,4 @@
+---
+# defaults file for zabbix-agent-update
+package_name:
+  - zabbix-plugins-pan

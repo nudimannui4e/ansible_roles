@@ -1,0 +1,7 @@
+[inc]
+app1-inc.mhd.local
+app2-inc.mhd.local
+db2-dk.ams.local
+[test]
+webmaster1-inc.mhd.local
+webslave1-inc.mhd.local

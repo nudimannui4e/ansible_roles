@@ -1,0 +1,23 @@
+---
+# tasks file for zabbix-agent-update
+
+- name: install last version "{{ package_name }}"
+  apt:
+    name: "{{ item }}"
+    state: latest
+    only_upgrade: yes
+    update_cache: yes
+    allow_unauthenticated: yes
+  when: (ansible_facts['distribution'] == "Debian" and ansible_facts['distribution_release'] == "stretch")
+  with_items:
+  - "{{ package_name }}"
+
+- name: init apt version module
+  ansible.builtin.package_facts:
+    manager: apt
+  when: ansible_facts['os_family'] == "Debian" 
+
+- name: Check "{{ package_name }}" version
+  ansible.builtin.debug:
+    msg: "{{ ansible_facts.packages['zabbix-plugins-pan']|map(attribute='version') }} Version is installed"
+  when: (ansible_facts['distribution'] == "Debian" and "'zabbix-plugins-pan' in ansible_facts.packages") 
