@@ -3,14 +3,11 @@
 
 - name: install last version "{{ package_name }}"
   apt:
-    name: "{{ item }}"
-    state: latest
+    name: zabbix-plugins-pan=0.3.381 
     only_upgrade: yes
     update_cache: yes
     allow_unauthenticated: yes
   when: (ansible_facts['distribution'] == "Debian" and ansible_facts['distribution_release'] == "stretch")
-  with_items:
-  - "{{ package_name }}"
 
 - name: init apt version module
   ansible.builtin.package_facts:
