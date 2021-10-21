@@ -1,4 +1,4 @@
 ---
 # defaults file for zabbix-agent-update
 package_name:
-  - zabbix-plugins-pan
+  - zabbix-plugins-pan=0.3.381
