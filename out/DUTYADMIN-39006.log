@@ -1,0 +1,146 @@
+
+PLAY [install "['zabbix-plugins-pan=0.3.388']"] ********************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [gi-casino2-es.mhd.local]
+ok: [pafeedloader-dog2.mhd.local]
+ok: [pafeedloader-horse1.mhd.local]
+ok: [gi-virtual-sports-server2.mhd.local]
+ok: [image-service1.mhd.local]
+ok: [grafana1.mhd.local]
+ok: [gi-casino-mobile-server2.ggs.local]
+ok: [gi-casino1-es.mhd.local]
+ok: [pafeedloader-dog1.mhd.local]
+ok: [gi-virtual-sports-server1.mhd.local]
+ok: [gi-casino-mobile-server1.knk.local]
+ok: [gi-casino-mobile-server2.knk.local]
+ok: [image-service2.mhd.local]
+ok: [pafeedloader-horse2.mhd.local]
+ok: [gi-casino2.ggs.local]
+ok: [gi-casino1.knk.local]
+ok: [gi-casino-mobile-server1.ggs.local]
+ok: [grafana2.mhd.local]
+ok: [gi-casino1.ggs.local]
+
+TASK [zabbix-agent-update : install last version "['zabbix-plugins-pan=0.3.388']"] ***
+changed: [pafeedloader-dog2.mhd.local]
+changed: [pafeedloader-horse1.mhd.local]
+changed: [gi-virtual-sports-server2.mhd.local]
+changed: [gi-casino-mobile-server2.ggs.local]
+changed: [grafana1.mhd.local]
+changed: [image-service1.mhd.local]
+changed: [gi-casino2-es.mhd.local]
+changed: [gi-casino-mobile-server1.knk.local]
+changed: [gi-virtual-sports-server1.mhd.local]
+changed: [gi-casino1-es.mhd.local]
+changed: [pafeedloader-dog1.mhd.local]
+changed: [image-service2.mhd.local]
+changed: [pafeedloader-horse2.mhd.local]
+changed: [gi-casino-mobile-server2.knk.local]
+changed: [gi-casino2.ggs.local]
+changed: [gi-casino1.knk.local]
+changed: [gi-casino-mobile-server1.ggs.local]
+changed: [grafana2.mhd.local]
+changed: [gi-casino1.ggs.local]
+
+TASK [zabbix-agent-update : init apt version module] ***************************
+ok: [pafeedloader-dog2.mhd.local]
+ok: [pafeedloader-horse1.mhd.local]
+ok: [gi-virtual-sports-server2.mhd.local]
+ok: [image-service1.mhd.local]
+ok: [gi-casino2-es.mhd.local]
+ok: [gi-casino-mobile-server2.ggs.local]
+ok: [grafana1.mhd.local]
+ok: [gi-casino1-es.mhd.local]
+ok: [gi-casino-mobile-server2.knk.local]
+ok: [gi-virtual-sports-server1.mhd.local]
+ok: [gi-casino-mobile-server1.knk.local]
+ok: [pafeedloader-dog1.mhd.local]
+ok: [gi-casino1.knk.local]
+ok: [image-service2.mhd.local]
+ok: [gi-casino2.ggs.local]
+ok: [grafana2.mhd.local]
+ok: [gi-casino-mobile-server1.ggs.local]
+ok: [gi-casino1.ggs.local]
+ok: [pafeedloader-horse2.mhd.local]
+
+TASK [zabbix-agent-update : Check "['zabbix-plugins-pan=0.3.388']" version] ****
+ok: [gi-virtual-sports-server2.mhd.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [pafeedloader-horse1.mhd.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [pafeedloader-dog2.mhd.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [image-service1.mhd.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [gi-casino2-es.mhd.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [gi-casino1-es.mhd.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [gi-casino-mobile-server2.ggs.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [grafana1.mhd.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [gi-casino-mobile-server1.knk.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [gi-casino-mobile-server2.knk.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [gi-casino1.knk.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [gi-virtual-sports-server1.mhd.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [pafeedloader-dog1.mhd.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [image-service2.mhd.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [gi-casino2.ggs.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [pafeedloader-horse2.mhd.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [grafana2.mhd.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [gi-casino-mobile-server1.ggs.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+ok: [gi-casino1.ggs.local] => {
+    "msg": "['0.3.388'] Version is installed"
+}
+
+PLAY RECAP *********************************************************************
+gi-casino-mobile-server1.ggs.local : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+gi-casino-mobile-server1.knk.local : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+gi-casino-mobile-server2.ggs.local : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+gi-casino-mobile-server2.knk.local : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+gi-casino1-es.mhd.local    : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+gi-casino1.ggs.local       : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+gi-casino1.knk.local       : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+gi-casino2-es.mhd.local    : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+gi-casino2.ggs.local       : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+gi-virtual-sports-server1.mhd.local : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+gi-virtual-sports-server2.mhd.local : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+grafana1.mhd.local         : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+grafana2.mhd.local         : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+image-service1.mhd.local   : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+image-service2.mhd.local   : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+pafeedloader-dog1.mhd.local : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+pafeedloader-dog2.mhd.local : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+pafeedloader-horse1.mhd.local : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+pafeedloader-horse2.mhd.local : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

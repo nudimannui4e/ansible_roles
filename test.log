@@ -1,0 +1,31 @@
+
+PLAY [install "['maint-client-pan=1.1.4']"] ************************************
+
+TASK [Gathering Facts] *********************************************************
+fatal: [oracle-stby-ggs.mhd.local]: UNREACHABLE! => {"changed": false, "msg": "Failed to create temporary directory.In some cases, you may have been able to authenticate and did not have permissions on the target directory. Consider changing the remote tmp path in ansible.cfg to a path rooted in \"/tmp\", for more error information use -vvv. Failed command was: ( umask 77 && mkdir -p \"` echo /home/ivliev.d/.ansible/tmp `\"&& mkdir \"` echo /home/ivliev.d/.ansible/tmp/ansible-tmp-1636705845.552031-291553-230813114326602 `\" && echo ansible-tmp-1636705845.552031-291553-230813114326602=\"` echo /home/ivliev.d/.ansible/tmp/ansible-tmp-1636705845.552031-291553-230813114326602 `\" ), exited with result 1", "unreachable": true}
+fatal: [oracle-stby.mhd.local]: UNREACHABLE! => {"changed": false, "msg": "Failed to create temporary directory.In some cases, you may have been able to authenticate and did not have permissions on the target directory. Consider changing the remote tmp path in ansible.cfg to a path rooted in \"/tmp\", for more error information use -vvv. Failed command was: ( umask 77 && mkdir -p \"` echo /home/ivliev.d/.ansible/tmp `\"&& mkdir \"` echo /home/ivliev.d/.ansible/tmp/ansible-tmp-1636705845.575263-291549-192061645627320 `\" && echo ansible-tmp-1636705845.575263-291549-192061645627320=\"` echo /home/ivliev.d/.ansible/tmp/ansible-tmp-1636705845.575263-291549-192061645627320 `\" ), exited with result 1", "unreachable": true}
+ok: [app1-inc.mhd.local]
+ok: [oracle-repl1.mhd.local]
+ok: [oracle-testers.mhd.local]
+ok: [service1-inc.mhd.local]
+
+TASK [maint-client-pan : install "['maint-client-pan=1.1.4']" deb] *************
+skipping: [oracle-repl1.mhd.local]
+skipping: [oracle-testers.mhd.local]
+ok: [app1-inc.mhd.local]
+ok: [service1-inc.mhd.local]
+
+TASK [maint-client-pan : install "['maint-client-pan=1.1.4']" rpm] *************
+skipping: [app1-inc.mhd.local]
+skipping: [service1-inc.mhd.local]
+fatal: [oracle-testers.mhd.local]: FAILED! => {"changed": false, "msg": "http://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7Server-x86_64/repodata/repomd.xml: [Errno 14] HTTP Error 404 - Not Found\nTrying other mirror.\n\n\n One of the configured repositories failed (PostgreSQL 9.4 7Server - x86_64),\n and yum doesn't have enough cached data to continue. At this point the only\n safe thing yum can do is fail. There are a few ways to work \"fix\" this:\n\n     1. Contact the upstream for the repository and get them to fix the problem.\n\n     2. Reconfigure the baseurl/etc. for the repository, to point to a working\n        upstream. This is most often useful if you are using a newer\n        distribution release than is supported by the repository (and the\n        packages for the previous distribution release still work).\n\n     3. Run the command with the repository temporarily disabled\n            yum --disablerepo=pgdg94 ...\n\n     4. Disable the repository permanently, so yum won't use it by default. Yum\n        will then just ignore the repository until you permanently enable it\n        again or use --enablerepo for temporary usage:\n\n            yum-config-manager --disable pgdg94\n        or\n            subscription-manager repos --disable=pgdg94\n\n     5. Configure the failing repository to be skipped, if it is unavailable.\n        Note that yum will try to contact the repo. when it runs most commands,\n        so will have to try and fail each time (and thus. yum will be be much\n        slower). If it is a very temporary problem though, this is often a nice\n        compromise:\n\n            yum-config-manager --save --setopt=pgdg94.skip_if_unavailable=true\n\nfailure: repodata/repomd.xml from pgdg94: [Errno 256] No more mirrors to try.\nhttp://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7Server-x86_64/repodata/repomd.xml: [Errno 14] HTTP Error 404 - Not Found\n", "rc": 1, "results": []}
+ok: [oracle-repl1.mhd.local]
+
+PLAY RECAP *********************************************************************
+app1-inc.mhd.local         : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+oracle-repl1.mhd.local     : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+oracle-stby-ggs.mhd.local  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+oracle-stby.mhd.local      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+oracle-testers.mhd.local   : ok=1    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+service1-inc.mhd.local     : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+

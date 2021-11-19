@@ -1,0 +1,24 @@
+---
+# tasks file for maint-client-pan 
+
+- name: install "{{ package_name }}" deb
+  apt:
+    name: "{{ package_name }}"
+    only_upgrade: yes
+    update_cache: yes
+    allow_unauthenticated: yes
+  when: (ansible_facts['pkg_mgr'] == "apt")
+
+#- name: install "{{ package_name }}" rpm
+#  yum:
+#    name: maint-client-pan-1.1.4-1
+#    state: installed
+#    disablerepo: '*'
+#    enablerepo: panbet
+#  when: (ansible_facts['pkg_mgr'] == "yum")
+
+
+#- name: Check "{{ package_name }}" version
+#  ansible.builtin.debug:
+#    msg: "{{ ansible_facts.packages['maint-client-pan']|map(attribute='version') }} Version is installed"
+#  when: ("'maint-client-pan' in ansible_facts.packages") 

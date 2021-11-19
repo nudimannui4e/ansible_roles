@@ -1,0 +1,4 @@
+---
+# defaults file for update 
+package_name:
+  - maint-client-pan=1.1.4
