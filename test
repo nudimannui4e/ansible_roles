@@ -1,8 +1,0 @@
-[test]
-app1-inc.mhd.local
-service1-inc.mhd.local
-[oracle]
-oracle-stby.mhd.local
-oracle-repl1.mhd.local
-oracle-stby-ggs.mhd.local
-oracle-testers.mhd.local
