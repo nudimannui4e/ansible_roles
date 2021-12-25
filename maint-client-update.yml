@@ -2,6 +2,6 @@
 - name: install "{{ package_name }}"
   hosts: "{{ variable_host | default('test') }}" 
   become: yes
-  gather_facts: yes 
+  gather_facts: yes
   roles:
     - maint-client-pan

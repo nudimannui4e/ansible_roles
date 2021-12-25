@@ -17,8 +17,7 @@
 #    enablerepo: panbet
 #  when: (ansible_facts['pkg_mgr'] == "yum")
 
-
-#- name: Check "{{ package_name }}" version
-#  ansible.builtin.debug:
-#    msg: "{{ ansible_facts.packages['maint-client-pan']|map(attribute='version') }} Version is installed"
-#  when: ("'maint-client-pan' in ansible_facts.packages") 
+- name: Check version
+  ansible.builtin.debug:
+    msg: "{{ ansible_facts.packages['maint-client-pan'] | length }} Version is installed"
+  when: ("'maint-client-pan' in ansible_facts.packages")
